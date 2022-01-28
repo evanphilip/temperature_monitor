@@ -1,0 +1,15 @@
+[Unit]
+Description=Temperature Monitor
+After=network-online.target
+
+[Service]
+Environment="GOOGLE_APPLICATION_CREDENTIALS=/home/pi/temperature_monitor/credentials.json"
+ExecStart=/usr/bin/python /home/pi/temperature_monitor/monitor.py
+WorkingDirectory=/home/pi/temperature_monitor/
+User=pi
+Group=pi
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
