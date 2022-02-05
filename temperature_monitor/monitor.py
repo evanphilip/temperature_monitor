@@ -24,7 +24,7 @@ if __name__ == '__main__':
         resource = {"majorDimension": "COLUMNS", "values": [
             [datetime.datetime.now().isoformat()], [temp]]}
         # append the data in the spreadsheet, including a timestamp
-        sheet.values().append(spreadsheetId=SPREADSHEET_ID, range="Sheet1!A:Z",
+        sheet.values().append(spreadsheetId=SPREADSHEET_ID, range="RawData!A:Z",
                               insertDataOption="INSERT_ROWS", valueInputOption="USER_ENTERED", body=resource).execute()
         # wait 30 seconds before continuing
         time.sleep(FREQUENCY*60)
